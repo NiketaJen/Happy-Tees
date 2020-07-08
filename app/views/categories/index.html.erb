@@ -1,0 +1,5 @@
+<ul>
+<%@categories.each do |category|%>
+<li><%= link_to category.style, category_path(category) %></li>
+<%end%>
+</ul>
