@@ -29,7 +29,7 @@ before_action :set_favorite, only: [:show, :edit, :update, :destroy]
     end
 
     def fav_params
-        params.require(:favorite).permit(:favorited)
+        params.require(:favorite).permit(:user_id, :product_id)
     end
 
 end
