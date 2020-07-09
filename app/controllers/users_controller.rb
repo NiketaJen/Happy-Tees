@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
 before_action :find_user, only: [:show, :edit, :update, :destroy]
-validates :first_name, pressence: true
-validates :last_name, pressence: true
-validates :password, pressence: true
-validates :email, pressence: true
+# validates :first_name, pressence: true
+# validates :last_name, pressence: true
+# validates :password, pressence: true
+# validates :email, pressence: true
+# validates :username, pressence: true
   
 
     def show
@@ -11,7 +12,7 @@ validates :email, pressence: true
 
     def new
         @user = User.new
-        render 'signup'
+        render 'new'
     end
 
     def create
@@ -45,6 +46,6 @@ validates :email, pressence: true
    
 
     def user_params
-        params.require(:user).permit(:first_name, :last_name, :email, :password)
+        params.require(:user).permit(:first_name, :last_name, :email, :password, :username)
     end
 end
