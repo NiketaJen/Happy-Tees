@@ -1,0 +1,9 @@
+<h1>Check out our awesome Tees!</h1>
+
+<ul>
+<%@categories.each do |category|%>
+<li><%= link_to category.style, category_path(category) %></li>
+<%end%>
+</ul>
+
+<%= link_to "My Account", user_path(session[:user_id])%>

@@ -1,5 +1,7 @@
+<h3>Shirts (<%= Product.count %>)</h3>
 <ul>
 <%@products.each do |product|%>
 <li><%= link_to product.name, product_path(product) %></li>
 <%end%>
 </ul>
+<%= link_to "Home", root_path %>

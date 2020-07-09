@@ -1,5 +1,11 @@
 <%=@user.first_name%> <%=@user.last_name%>
 
 <br>
-<p> <%= button_to "My Favorites", favorite_path, method: 'get' %> </p>
+<p> <%= button_to "My Favorites", favorite_path(), method: 'get' %> </p>
+<br>
+
+<p> <%= button_to "My Cart", shopping_cart_path(@user.shopping_carts.last.id), method: 'get'%></p>
+<br>
+<p> <%= button_to "Edit Account Information", edit_user_path, method: 'get'%></p>
+
 

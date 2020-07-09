@@ -1,5 +1,15 @@
+<div>
 <ul>
-<%@user.shopping_carts.last.products.each do |product| %>
-<li><%=product.name%></li>
+<% if @cart.products == []%>
+    Nothing to see here
+<% else %>
+<%@cart.products.each do |product| %>
+<li><%= link_to product.name, product %></li>
+<%end%>
 <%end%>
 </ul>
+<p>Total Items in Cart: <%= @cart.products.count %></p>
+</div>
+
+<p><%= link_to "Continue Shopping", home_path%> </p>
+<p><%= link_to "Edit Cart", edit_shopping_cart_path%> </p>

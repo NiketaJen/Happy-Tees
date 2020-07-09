@@ -3,6 +3,8 @@ before_action :find_user, only: [:show, :edit, :update, :destroy]
 
 
     def show
+
+     
     end
 
     def new
@@ -15,6 +17,7 @@ before_action :find_user, only: [:show, :edit, :update, :destroy]
 
         if @user.valid?
             @user.save
+            @cart = ShoppingCart.create(user_id: @user.id)
             redirect_to user_path(@user)
         else
             @errors = @user.errors.full_messages
