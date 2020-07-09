@@ -6,6 +6,11 @@ before_action :set_favorite, only: [:show, :edit, :update, :destroy]
     end
 
     def show
+        @user = User.find(params[:id])
+    end
+
+    def create
+        @favorite = Favorite.create(fav_params)
     end
 
     def edit

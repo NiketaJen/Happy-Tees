@@ -1,11 +1,12 @@
-class Shopping_CartController < ApplicationController
-    before_action :find_Shopping_Cart, only: [:edit, :update, :destroy]
+class ShoppingCartsController < ApplicationController
+    before_action :find_shopping_cart, only: [:edit, :show, :update, :destroy]
        
         def index
             
         end
     
         def show
+            @user = User.find(params[:id])
         end
     
         def new
@@ -24,11 +25,11 @@ class Shopping_CartController < ApplicationController
         end
     
         private
-        def find_Shopping_Cart
-            @Shopping_Cart = Shopping_Cart.find(params[:id])
+        def find_shopping_cart
+            @shopping_cart = ShoppingCart.find(params[:id])
         end
     
-        def Shopping_Cart_params
+        def shopping_cart_params
             params.require(:Shopping_Cart).permit(:user_id, :product_id)
         end
-    en
+    end

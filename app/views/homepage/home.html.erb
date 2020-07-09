@@ -1,0 +1,9 @@
+<h1>Happy Tees</h1>
+<h3>Where Tees are Happy and so are we. But our slogans are bad. Sorry about that.</h3>
+<div>
+<p><%@categories.each do |category| %>
+    <%=link_to category.style, category_path(category.id)%>
+    <%end%>
+</div>
+
+<%= link_to "Create Account", new_user_path %>

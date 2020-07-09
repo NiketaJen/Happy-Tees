@@ -1,1 +1,9 @@
 <%=@product.name%>
+<br>
+<br>
+ <form action="/favorites/<%=@favorite.id%>/set_to_favorite" method="POST">
+  <input type="hidden" name= "authenticity_token" value="<%=form_authenticity_token%>">
+    <input type="submit" value= "Add to Favorites">
+  </form>
+
+  <%= link_to "Back", products_path %>
