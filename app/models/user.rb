@@ -5,5 +5,6 @@ class User < ApplicationRecord
     has_many :favorites
     has_many :products, through: :favorites
     validates :first_name, :last_name, :email, :password, presence: true
+    validates :username, presence: true, uniqueness: true
 
 end
