@@ -1,0 +1,9 @@
+Log me in already!
+
+<%=form_tag sessions_path do %>
+<%=label_tag "Username"%>
+<%= text_field_tag :username%>
+<%= label_tag "Password"%>
+<%= text_field_tag :password%>
+<%=submit_tag "Make it so"%>
+<%end%>
