@@ -1,11 +1,6 @@
 class UsersController < ApplicationController
 before_action :find_user, only: [:show, :edit, :update, :destroy]
-# validates :first_name, pressence: true
-# validates :last_name, pressence: true
-# validates :password, pressence: true
-# validates :email, pressence: true
-# validates :username, pressence: true
-  
+
 
     def show
     end
