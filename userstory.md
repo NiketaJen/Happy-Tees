@@ -26,14 +26,14 @@ User can click on product (index) and go to its show page
 
 Product:#####################################
 *are unisex and 1 size fits all 
-*stretch goal, men/women, sizes
+*stretch goal, men/women, sizes, *price
 Name
 Quantity
 img
 category id
 Belongs to category
-has many shopping cart
-Has many users through shopping cart
+has many cart products
+Has many shopping carts through cart products
 <!-- User can see all products -->
 <!-- User can click on individual product -->
 User can add product to shopping cart
@@ -45,9 +45,9 @@ Button to add to shopping cart
 button to add to favorite
 
 *Favorite:####################################
-Favorited
-User id, index true
-Belongs to favorited, polymorphic true
+product id
+User id, 
+Belongs to favorite
 Belongs to user
 <!-- User can see all favorites -->
 User can update favorites

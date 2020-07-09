@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
 before_action :find_user, only: [:show, :edit, :update, :destroy]
-
+validates :first_name, pressence: true
+validates :last_name, pressence: true
+validates :password, pressence: true
+validates :email, pressence: true
   
 
     def show
@@ -8,6 +11,7 @@ before_action :find_user, only: [:show, :edit, :update, :destroy]
 
     def new
         @user = User.new
+        render 'signup'
     end
 
     def create
@@ -18,7 +22,7 @@ before_action :find_user, only: [:show, :edit, :update, :destroy]
             redirect_to user_path(@user)
         else
             @errors = @user.errors.full_messages
-            render 'new'
+            render signup_path
         end
     end
 
