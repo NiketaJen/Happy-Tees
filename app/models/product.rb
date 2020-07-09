@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
-    belongs_to :category
-    has_many :shopping_carts
-    has_many :users, through: :shopping_carts
-    has_many :favorites, as: :favorited
+    belongs_to :favorite
+    has_many :cart_products
+    has_many :shopping_carts, through: :cart_products
+    has_many :users, through: :favorites
 end

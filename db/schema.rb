@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_08_161641) do
+ActiveRecord::Schema.define(version: 2020_07_08_195510) do
+
+  create_table "cart_products", force: :cascade do |t|
+    t.integer "shopping_cart_id"
+    t.integer "product_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "style"
@@ -19,64 +26,21 @@ ActiveRecord::Schema.define(version: 2020_07_08_161641) do
   end
 
   create_table "favorites", force: :cascade do |t|
-    t.string "favorited_type", null: false
-    t.integer "favorited_id", null: false
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["favorited_type", "favorited_id"], name: "index_favorites_on_favorited_type_and_favorited_id"
-  end
-
-  create_table "favorites", force: :cascade do |t|
-    t.string "favorited_type", null: false
-    t.integer "favorited_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["favorited_type", "favorited_id"], name: "index_favorites_on_favorited_type_and_favorited_id"
-  end
-
-  create_table "favorites", force: :cascade do |t|
-    t.string "favorited_type", null: false
-    t.integer "favorited_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["favorited_type", "favorited_id"], name: "index_favorites_on_favorited_type_and_favorited_id"
-  end
-
-  create_table "favorites", force: :cascade do |t|
-    t.string "favorited_type", null: false
-    t.integer "favorited_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["favorited_type", "favorited_id"], name: "index_favorites_on_favorited_type_and_favorited_id"
-  end
-
-  create_table "favorites", force: :cascade do |t|
-    t.string "favorited_type", null: false
-    t.integer "favorited_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["favorited_type", "favorited_id"], name: "index_favorites_on_favorited_type_and_favorited_id"
-  end
-
-  create_table "favorites", force: :cascade do |t|
-    t.string "favorited_type", null: false
-    t.integer "favorited_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["favorited_type", "favorited_id"], name: "index_favorites_on_favorited_type_and_favorited_id"
   end
 
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.integer "category_id"
-    t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "favorite_id"
   end
 
   create_table "shopping_carts", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "product_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

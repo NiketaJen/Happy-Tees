@@ -9,9 +9,9 @@ has many Shopping Cart
 Has many products through shopping cart
 Has many favorites
 Has many favorite_products through favorites, source favorited, source_type product
-User can create an account
+<!-- User can create an account -->
 User can login to existing account
-User can update account
+<!-- User can update account -->
 
 
 Shopping Cart:############################
@@ -40,14 +40,16 @@ User can add product to shopping cart
 User can delete product from shopping cart
 User can add product to favorites
 User can delete product from favorites
-User can see products by style/category
+<!-- User can see products by style/category -->
+Button to add to shopping cart
+button to add to favorite
 
 *Favorite:####################################
 Favorited
 User id, index true
 Belongs to favorited, polymorphic true
 Belongs to user
-User can see all favorites
+<!-- User can see all favorites -->
 User can update favorites
 
 

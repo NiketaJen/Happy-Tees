@@ -1,6 +1,8 @@
 class User < ApplicationRecord
     has_many :shopping_carts
-    has_many :products, through: :shopping_carts
-    has_many :favorites, as: :favorited
-    
+    has_many :cart_products, through: :shopping_carts
+    has_many :favorites
+    has_many :products, through: :favorites
+    validates :first_name, :last_name, :email, :password, presence: true
+
 end

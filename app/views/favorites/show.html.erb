@@ -1,0 +1,10 @@
+ Favorite Tees
+<div>
+
+<ul>
+<% @user.products.each do |product| %>
+
+<li><%=product.name%></li>
+</ul>
+<%end%>
+</div>

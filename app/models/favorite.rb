@@ -1,3 +1,4 @@
 class Favorite < ApplicationRecord
-  belongs_to :favorited, polymorphic: true
+  belongs_to :user
+  has_many :products
 end
