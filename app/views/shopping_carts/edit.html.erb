@@ -2,7 +2,7 @@
 <h5>then go buy something better</h5>
 
 
-<%= form_for(@cart, method: 'delete') do |f| %>
+<%= form_for(@cart, method: 'patch') do |f| %>
 <%= f.label :items%>
 <%= f.collection_check_boxes(:product_ids, @cart.products, :id, :name, prompt:"remove items") %>
 <%= f.submit %>

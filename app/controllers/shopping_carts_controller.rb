@@ -22,10 +22,13 @@ class ShoppingCartsController < ApplicationController
         end
     
         def update
+            @user = User.find(session[:user_id])
+            @cart = @user.shopping_carts.last
+            @cart.update(shopping_cart_params)
         end
     
         def destroy
-            @item = CatrProduct.find(params)
+         
 
         end
     
@@ -35,6 +38,6 @@ class ShoppingCartsController < ApplicationController
         end
     
         def shopping_cart_params
-            params.require(:Shopping_Cart).permit(:user_id)
+            params.require(:shopping_cart).permit(:user_id, product_ids: [])
         end
     end
