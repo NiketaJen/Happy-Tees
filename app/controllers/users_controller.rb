@@ -18,7 +18,7 @@ before_action :find_user, only: [:show, :edit, :update, :destroy]
             redirect_to user_path(@user)
         else
             @errors = @user.errors.full_messages
-            render signup_path
+            render 'new'
         end
     end
 

@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+
 # User.destroy_all
 # Product.destroy_all
 # Shopping_cart.destroy_all
@@ -39,3 +41,4 @@
 # 10.times do
 #     Favorite.create(user_id: User.all.sample.id, product_id: Product.all.sample.id )
 # end
+
