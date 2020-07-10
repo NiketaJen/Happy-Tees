@@ -7,7 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-
 # User.destroy_all
 # Product.destroy_all
 # Shopping_cart.destroy_all
@@ -41,4 +40,7 @@
 # 10.times do
 #     Favorite.create(user_id: User.all.sample.id, product_id: Product.all.sample.id )
 # end
+<<<<<<< HEAD
+=======
 
+>>>>>>> 5518a838b892c86afb1fb6ff263c0740709ce52e

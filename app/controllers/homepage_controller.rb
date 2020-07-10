@@ -8,6 +8,10 @@ class HomepageController < ApplicationController
     render 'new'
 end
 
+def index
+    @categories = Category.all
+end
+
 def create
     @user = User.new(user_params)
 
