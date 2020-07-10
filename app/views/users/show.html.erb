@@ -1,11 +1,11 @@
-<%=@user.first_name%> <%=@user.last_name%>
+<div class="jumbotron text-center"><h3><%=@user.first_name%> <%=@user.last_name%></h3>
+</div>
 
 <br>
-<p> <%= button_to "My Favorites", favorite_path(), method: 'get' %> </p>
-<br>
 
-<p> <%= button_to "My Cart", shopping_cart_path(@user.shopping_carts.last.id), method: 'get'%></p>
+<p> <%= button_to "My Cart", shopping_cart_path(@user.shopping_carts.last.id), method: 'get', class: 'btn'%></p>
 <br>
-<p> <%= button_to "Edit Account Information", edit_user_path, method: 'get'%></p>
-
+<div><%= button_to "Edit Account Information", edit_user_path, method: 'get', class: 'btn'%></div>
+<br>
+<p> <%= link_to "Continue Shopping", categories_path, class: 'btn'%></p>
 

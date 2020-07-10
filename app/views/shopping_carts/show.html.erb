@@ -1,3 +1,4 @@
+<div class="jumbotron text-center"><h1>Hey! It's your Cart!</h1></div>
 <div>
 <ul>
 <% if @cart.products == []%>
@@ -8,8 +9,12 @@
 <%end%>
 <%end%>
 </ul>
-<p>Total Items in Cart: <%= @cart.products.count %></p>
+<p class="p-3 text-primary">Total Items in Cart: <%= @cart.products.count %></p>
 </div>
 
-<p><%= link_to "Continue Shopping", home_path%> </p>
-<p><%= link_to "Edit Cart", edit_shopping_cart_path%> </p>
+<p class="p-3 text-primary"><%= link_to "Continue Shopping", home_path%> </p>
+<p class="p-3 text-primary"><%= link_to "Edit Cart", edit_shopping_cart_path%> </p>
+<br>
+<%= link_to "My Account", user_path(session[:user_id])%>
+<br>
+<p class="p-3 text-primary"><%= link_to "Home", home_path %></p>

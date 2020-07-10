@@ -1,5 +1,5 @@
 {
-  "name": "Happy_Tees",
+  "name": "happy_tees",
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.0",

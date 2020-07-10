@@ -1,11 +1,23 @@
-<h1>Trash this Trash</h1>
-<h5>then go buy something better</h5>
+<div class="jumbotron text-center"><h1>Update Your Cart</h1></div>
+<h3>then go buy something better</h3>
 
 
+
+<div class="row">       
 <%= form_for(@cart, method: 'patch') do |f| %>
-<%= f.label :items%>
-<%= f.collection_check_boxes(:product_ids, @cart.products, :id, :name, prompt:"remove items") %>
-<%= f.submit %>
+
+<%= f.collection_check_boxes(:product_ids, @cart.products, :id, :name) do |b| %>
+<p class="p-3 text-primary"><%=b.label { b.text } %> <%=b.check_box %><br> </p><br>
+<%end%>
+
+<%= f.submit 'Trash this Trash', class: 'btn' %>
+
 <% end %>
 
-<p><%= link_to "Home", home_path %></p>
+</div>
+<br>
+<p class="p-3 text-primary"><%= link_to "Continue Browsing", categories_path %></p>
+<br>
+<%= link_to "My Account", user_path(session[:user_id])%>
+<br>
+<p class="p-3 text-primary"><%= link_to "Home", home_path %></p>

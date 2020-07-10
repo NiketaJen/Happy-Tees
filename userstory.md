@@ -20,7 +20,7 @@ Shopping Cart:############################
 belongs to users
 has_many cart_products -->
 <!-- User can see all products in shopping cart through cart_products -->
-User can edit/remove items from shopping cart
+<!-- User can edit/remove items from shopping cart -->
 <!-- User can click on product (index) and go to its show page -->
 <!-- User can see how many items are in cart -->
 

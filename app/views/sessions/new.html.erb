@@ -1,9 +1,14 @@
-Log me in already!
+<div class="jumbotron text-center"><h1>Log me in already!</h1></div>
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<%end%>
 
 <%=form_tag sessions_path do %>
 <%=label_tag "Username"%>
 <%= text_field_tag :username%>
 <%= label_tag "Password"%>
 <%= text_field_tag :password%>
-<%=submit_tag "Make it so"%>
+<%=submit_tag "Make it so", class: 'btn'%>
 <%end%>

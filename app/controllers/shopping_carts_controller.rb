@@ -25,6 +25,7 @@ class ShoppingCartsController < ApplicationController
             @user = User.find(session[:user_id])
             @cart = @user.shopping_carts.last
             @cart.update(shopping_cart_params)
+            render 'edit'
         end
     
         def destroy

@@ -1,6 +1,12 @@
-<%=@product.name%>
+<div class="jumbotron text-center"><h1><%=@product.name%></h1></div>
+<%= image_tag("#{@product.image}")%>
 <br>
 <br>
-<p> <%= button_to "Add To Cart", cart_path, method: 'post' %> </p>
+<pclass="p-3 text-primary"> <%= button_to "Add To Cart", cart_path, method: 'post', class: 'btn' %> </p>
 
-  <%= link_to "Back", products_path %>
+
+  <%= link_to "Back", products_path %> 
+  <br>
+<p class="p-3 text-primary"><%= link_to "My Account", user_path(session[:user_id])%></p>
+<br>
+<%= link_to "Home", home_path%>
